@@ -17,135 +17,158 @@
   color: white;
   overflow-x: hidden;
 }
-    
-    #intro {
-      background-color: aqua;
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
-    .fade {
-      color: black;
-      font-size: 1.7rem;
-      opacity: 0;
-      transition: opacity 2s;
-      position: absolute;
-    }
-    #main-site {
-      display: none;
-      min-height: 100vh;
-      padding: 20px;
-      text-align: center;
-    }
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-bottom: 40px;
-    }
-    .social-icons a img {
-      width: 30px;
-      height: 30px;
-      filter: invert(100%);
-    }
-    .profile-section {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
-    }
-    .profile-img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid white;
-    }
-    .profile-info {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      color: white;
-    }
-    .name-title {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: white;
-    }
-    .username {
-      color: white;
-      font-size: 1rem;
-    }
-    .music-section {
-      margin-top: 40px;
-    }
-    .music-section iframe {
-      margin-top: 10px;
-    }
-    .category-box {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-    }
-    .category-card {
-      position: relative;
-      width: 150px;
-      height: 150px;
-      background-image: url('1748705069096_062436.PNG');
-      background-size: cover;
-      background-position: center;
-      border-radius: 12px;
-      overflow: hidden;
-      cursor: pointer;
-      text-decoration: none;
-      border: 3px solid white;
-    }
-    .category-card span {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
-      font-size: 1.2rem;
-      font-weight: bold;
-      text-shadow: 1px 1px 3px black;
-      text-align: center;
-    }
-    @media screen and (max-width: 768px) {
-      .profile-section {
-        flex-direction: column;
-      }
-      .profile-img {
-        border-radius: 50% 50% 50% 50%;
-      }
-      .profile-info {
-        align-items: center;
-        text-align: center;
-      }
-    }
+
+#intro {
+  background-image: url('arkaplan2.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.fade {
+  color: black;
+  font-size: 1.7rem;
+  opacity: 0;
+  transition: opacity 2s;
+  position: absolute;
+}
+#main-site {
+  display: none;
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+.social-icons a img {
+  width: 30px;
+  height: 30px;
+  filter: invert(100%);
+}
+.profile-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+}
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: white;
+}
+.name-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+}
+.username {
+  color: white;
+  font-size: 1rem;
+}
+.music-section {
+  margin-top: 40px;
+}
+.music-section iframe {
+  margin-top: 10px;
+}
+.category-box {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+.category-card {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background-image: url('1748705069096_062436.PNG');
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  border: 3px solid white;
+}
+.category-card span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px black;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .profile-section {
+    flex-direction: column;
+  }
+  .profile-img {
+    border-radius: 50% 50% 50% 50%;
+  }
+  .profile-info {
+    align-items: center;
+    text-align: center;
+  }
+}
   </style>
   <script>
     window.addEventListener('DOMContentLoaded', () => {
       const helloText = document.getElementById('hello');
       const zazaText = document.getElementById('zaza');
+      const mainSite = document.getElementById('main-site');
+      const intro = document.getElementById('intro');
+
+      // Welcome yazısını göster
       setTimeout(() => {
         helloText.style.opacity = 1;
       }, 100);
+
+      // Welcome yazısını gizle
       setTimeout(() => {
         helloText.style.opacity = 0;
-      }, 5100);
+      }, 3100);
+
+      // zaza yazısını göster
       setTimeout(() => {
         zazaText.style.opacity = 1;
-      }, 5200);
+      }, 3700);
+
+      // zaza yazısını gizle (isteğe bağlı)
       setTimeout(() => {
-        document.getElementById('intro').style.display = 'none';
-        document.getElementById('main-site').style.display = 'block';
-      }, 7200);
+        zazaText.style.opacity = 0;
+      }, 6400);
+
+      // siteyi yavaşça göster
+      setTimeout(() => {
+        intro.style.display = 'none';
+        mainSite.style.display = 'block';
+        setTimeout(() => {
+          mainSite.style.opacity = 1;
+        }, 100);
+      }, 6800);
     });
   </script>
 </head>
@@ -159,19 +182,23 @@
       <a href="https://instagram.com/" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/instagram.svg" alt="Instagram"></a>
       <a href="https://youtube.com/" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/youtube.svg" alt="YouTube"></a>
       <a href="https://discord.com/" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/discord.svg" alt="Discord"></a>
-    </div><div class="profile-section">
-  <img src="IMG-20250629-WA0002.jpg" alt="Mert Fotoğrafı" class="profile-img">
-  <div class="profile-info">
-    <div class="name-title">Mert Bakır - zaza</div>
-    <div class="username">echopast</div>
+    </div>
+    <div class="profile-section">
+      <img src="IMG-20250629-WA0002.jpg" alt="Mert Fotoğrafı" class="profile-img">
+      <div class="profile-info">
+        <div class="name-title">Mert Bakır - zaza</div>
+        <div class="username">echopast</div>
+      </div>
+    </div>
+    <div class="music-section">
+      <div>🎵 Merdo Merdoo 🎵</div>
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2t8yVaLvJ0RenpXUIAC52d?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+    <div class="category-box">
+      <a href="https://ech0past.github.io/inciandmert/" class="category-card">
+        <span>💘</span>
+      </a>
+    </div>
   </div>
-</div><div class="music-section">
-  <div>🎵 Merdo Merdoo 🎵</div>
-  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2t8yVaLvJ0RenpXUIAC52d?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-</div><div class="category-box">
-  <a href="https://ech0past.github.io/inciandmert/" class="category-card">
-    <span>💘</span>
-  </a>
-</div>  </div>
 </body>
 </html>
