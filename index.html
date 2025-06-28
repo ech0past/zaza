@@ -1,5 +1,4 @@
-<!DOCTYPE html><html lang="tr">
-<head>
+<!DOCTYPE html><html lang="tr"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zaza Website</title>
@@ -42,7 +41,11 @@
       justify-content: center;
       gap: 20px;
       margin-bottom: 40px;
-      font-size: 2rem;
+    }
+    .social-icons a img {
+      width: 30px;
+      height: 30px;
+      filter: grayscale(100%);
     }
     .profile-section {
       display: flex;
@@ -73,20 +76,50 @@
       font-size: 1rem;
     }
     .music-section {
-      margin-top: 20px;
-    }@media screen and (max-width: 768px) {
-  .profile-section {
-    flex-direction: column;
-  }
-  .profile-img {
-    border-radius: 50% 50% 50% 50%;
-  }
-  .profile-info {
-    align-items: center;
-    text-align: center;
-  }
-}
-
+      margin-top: 40px;
+    }
+    .music-section iframe {
+      margin-top: 10px;
+    }
+    .category-box {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+    }
+    .category-card {
+      position: relative;
+      width: 300px;
+      height: 180px;
+      background-image: url('kategori.jpg');
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .category-card span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-shadow: 1px 1px 3px black;
+    }
+    @media screen and (max-width: 768px) {
+      .profile-section {
+        flex-direction: column;
+      }
+      .profile-img {
+        border-radius: 50% 50% 50% 50%;
+      }
+      .profile-info {
+        align-items: center;
+        text-align: center;
+      }
+    }
   </style>
   <script>
     window.addEventListener('DOMContentLoaded', () => {
@@ -114,10 +147,10 @@
     <div class="fade" id="zaza">zaza?? 🤨</div>
   </div>  <div id="main-site">
     <div class="social-icons">
-      <a href="https://instagram.com/" target="_blank">📷</a>
-      <a href="https://youtube.com/" target="_blank">📺</a>
-      <a href="https://github.com/" target="_blank">💻</a>
-      <a href="https://discord.com/" target="_blank">💬</a>
+      <a href="https://instagram.com/" target="_blank"><img src="icons/instagram.png" alt="Instagram"></a>
+      <a href="https://youtube.com/" target="_blank"><img src="icons/youtube.png" alt="YouTube"></a>
+      <a href="https://github.com/" target="_blank"><img src="icons/github.png" alt="GitHub"></a>
+      <a href="https://discord.com/" target="_blank"><img src="icons/discord.png" alt="Discord"></a>
     </div><div class="profile-section">
   <img src="arkaplan.jpg" alt="Mert Fotoğrafı" class="profile-img">
   <div class="profile-info">
@@ -127,10 +160,14 @@
 </div>
 
 <div class="music-section">
-  <div>🎧 Şu anda ne dinliyorum? 🎧</div>
-  <!-- Spotify Now Playing Widget from your account (replace user_id accordingly) -->
-  <iframe style="border-radius:12px" src="https://open.spotify.com/embed?uri=spotify:user:YOUR_USER_ID" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-  <!-- Not: Gerçek zamanlı gösterim için Spotify API token ve JS entegrasyonu gerekir -->
+  <div>🎵 Bir şarkı patlatayım 🎵</div>
+  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2t8yVaLvJ0RenpXUIAC52d?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</div>
+
+<div class="category-box">
+  <a href="https://seninsite.com/kategori" class="category-card">
+    <span>İnci&Mert</span>
+  </a>
 </div>
 
   </div>
