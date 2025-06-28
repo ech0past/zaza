@@ -48,7 +48,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 40px;
+      gap: 20px;
+      flex-wrap: wrap;
       margin-bottom: 20px;
     }
     .profile-img {
@@ -58,8 +59,13 @@
       object-fit: cover;
       border: 3px solid #aaa;
     }
+    .profile-info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
     .name-title {
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: bold;
     }
     .username {
@@ -68,7 +74,19 @@
     }
     .music-section {
       margin-top: 20px;
-    }
+    }@media screen and (max-width: 768px) {
+  .profile-section {
+    flex-direction: column;
+  }
+  .profile-img {
+    border-radius: 50% 50% 50% 50%;
+  }
+  .profile-info {
+    align-items: center;
+    text-align: center;
+  }
+}
+
   </style>
   <script>
     window.addEventListener('DOMContentLoaded', () => {
@@ -101,8 +119,8 @@
       <a href="https://github.com/" target="_blank">💻</a>
       <a href="https://discord.com/" target="_blank">💬</a>
     </div><div class="profile-section">
-  <img src="arkaplan.jpg" alt="Mert Fotoğrafı" class="profile-img">
-  <div>
+  <img src="fotom.jpg" alt="Mert Fotoğrafı" class="profile-img">
+  <div class="profile-info">
     <div class="name-title">🧔 Mert Bakır - zaza</div>
     <div class="username">👤 echopast</div>
   </div>
@@ -110,7 +128,9 @@
 
 <div class="music-section">
   <div>🎧 Şu anda ne dinliyorum?</div>
-  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7ouMYWpwJ422jRcDASZB7P?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  <!-- Spotify Now Playing Widget from your account (replace user_id accordingly) -->
+  <iframe style="border-radius:12px" src="https://open.spotify.com/embed?uri=spotify:user:YOUR_USER_ID" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  <!-- Not: Gerçek zamanlı gösterim için Spotify API token ve JS entegrasyonu gerekir -->
 </div>
 
   </div>
