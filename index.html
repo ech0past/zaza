@@ -96,6 +96,7 @@
   margin-top: 30px;
   display: flex;
   justify-content: center;
+  gap: 20px; /* aralara boşluk koydum */
 }
 .category-card {
   position: relative;
@@ -174,6 +175,11 @@
       }, 1500);
     }, 6600);
   });
+
+  function comingSoon(e) {
+    e.preventDefault();
+    alert("Coming Soon!");
+  }
 </script>
 </head>
 <body>
@@ -201,6 +207,9 @@
     <div class="category-box">
       <a href="https://ech0past.github.io/inciandmert/" class="category-card">
         <span>💘</span>
+      </a>
+      <a href="#" class="category-card" onclick="comingSoon(event)">
+        <span>🔒 Secret</span>
       </a>
     </div>
   </div>
