@@ -135,42 +135,46 @@
 }
   </style>
   <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const helloText = document.getElementById('hello');
-      const zazaText = document.getElementById('zaza');
-      const mainSite = document.getElementById('main-site');
-      const intro = document.getElementById('intro');
+  window.addEventListener('DOMContentLoaded', () => {
+    const helloText = document.getElementById('hello');
+    const zazaText = document.getElementById('zaza');
+    const mainSite = document.getElementById('main-site');
+    const intro = document.getElementById('intro');
 
-      // Welcome yazısını göster
-      setTimeout(() => {
-        helloText.style.opacity = 1;
-      }, 100);
+    // Welcome yazısı
+    setTimeout(() => {
+      helloText.style.opacity = 1;
+    }, 100);
 
-      // Welcome yazısını gizle
-      setTimeout(() => {
-        helloText.style.opacity = 0;
-      }, 3100);
+    setTimeout(() => {
+      helloText.style.opacity = 0;
+    }, 3100);
 
-      // zaza yazısını göster
-      setTimeout(() => {
-        zazaText.style.opacity = 1;
-      }, 3700);
+    // zaza yazısı
+    setTimeout(() => {
+      zazaText.style.opacity = 1;
+    }, 3700);
 
-      // zaza yazısını gizle (isteğe bağlı)
-      setTimeout(() => {
-        zazaText.style.opacity = 0;
-      }, 6400);
+    setTimeout(() => {
+      zazaText.style.opacity = 0;
+    }, 6400);
 
-      // siteyi yavaşça göster
+    // siteyi opaklığı artarak göster
+    setTimeout(() => {
+      intro.style.transition = "opacity 1.5s ease";
+      intro.style.opacity = 0;
+
       setTimeout(() => {
         intro.style.display = 'none';
         mainSite.style.display = 'block';
+
         setTimeout(() => {
           mainSite.style.opacity = 1;
-        }, 100);
-      }, 6800);
-    });
-  </script>
+        }, 50);
+      }, 1500);
+    }, 6600);
+  });
+</script>
 </head>
 <body>
   <div id="intro">
